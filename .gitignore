@@ -1,0 +1,2 @@
+# Private API keys — never commit
+.env

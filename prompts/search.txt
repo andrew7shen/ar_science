@@ -1,0 +1,78 @@
+You are finding solutions from {{domain}} that could be applied to a scientific problem through analogical reasoning.
+
+**Problem:**
+{{problem_summary}}
+
+**Analogy to {{domain}}:**
+{{analogy_title}}
+
+**Object Mappings (source → {{domain}}):**
+{{object_mappings}}
+
+**Shared Relational Structure:**
+{{shared_relations}}
+
+**Key Concepts:**
+{{key_terms}}
+
+**IMPORTANT:** Use the object mappings above to guide your search. Find solutions in {{domain}} that work with the TARGET objects (right side of mappings) and preserve the shared relational structure. Do NOT search for direct solutions in the source problem's own domain — the whole point is to find them elsewhere.
+
+**OUTPUT CONCISENESS:**
+- Keep descriptions to 2-3 sentences, focus on core algorithm/method only
+- Avoid verbose background - provide only technical essentials for analogical reasoning
+
+**Your task:**
+Find {{num_solutions}} real, existing solutions, algorithms, or methods in {{domain}} that address the shared relational structure. Look for published research, documented algorithms, or established methods.
+
+**CRITICAL - Citation Accuracy Requirements:**
+- Each solution MUST be based on a SPECIFIC paper, article, or documented method
+- The cited source MUST directly describe the specific solution/algorithm/method you're reporting
+- DO NOT cite general surveys or overview papers unless they specifically describe the method in detail
+- DO NOT cite a source that only mentions the domain or related concepts - the source must describe THIS SPECIFIC SOLUTION
+- Each solution should have DIFFERENT primary sources - if you're citing the same paper for multiple solutions, you're doing it wrong
+- When in doubt, find MORE SPECIFIC papers that directly describe the method
+- **CRITICAL:** You MUST provide the COMPLETE, EXACT TITLE of each paper/source you cite
+- The paper title must match exactly what appears on the paper's webpage - do not truncate, abbreviate, or approximate titles
+
+**Code Implementation Discovery:**
+For each solution, try to find GitHub repositories with code implementations:
+- Search for "[solution name] github implementation"
+- Search for "[paper title] code"
+- Check paper pages for "Code Availability" sections
+- Look for official implementations or well-maintained research codebases
+- If you cannot find verified GitHub repos, leave the github_repos array empty
+
+For each solution found, return:
+1. "title": Descriptive title of the solution/algorithm
+2. "source_domain": "{{domain}}" (MUST be this exact domain name)
+3. "description": 2-3 sentence explanation with specifics
+4. "key_concepts": 3-5 core techniques/concepts
+5. "relevance": How this solution addresses the shared relational structure and could transfer back to the source problem
+6. "sources": URLs or citations you found
+7. "source_titles": EXACT titles of papers/articles at each source URL (must match order of sources array)
+8. "github_repos": Array of GitHub repositories found (can be empty if none found)
+
+**CRITICAL:** After completing your research, return ONLY the JSON array with NO additional text, explanation, or commentary. Do not write "Based on my research" or any other introduction. Start your response directly with the JSON array.
+
+Format:
+```json
+[
+  {
+    "title": "Solution name",
+    "source_domain": "{{domain}}",
+    "description": "Detailed explanation...",
+    "key_concepts": ["concept1", "concept2", "concept3"],
+    "relevance": "How this addresses the shared relational structure...",
+    "sources": ["url1", "url2"],
+    "source_titles": ["Exact Paper Title 1", "Exact Paper Title 2"],
+    "github_repos": [
+      {
+        "url": "https://github.com/owner/repo",
+        "source": "paper"
+      }
+    ]
+  }
+]
+```
+
+Return ONLY the JSON array, nothing else.

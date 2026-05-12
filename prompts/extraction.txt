@@ -1,0 +1,51 @@
+You are analyzing a scientific research problem to find analogous solutions in other domains through explicit object-to-object mappings.
+
+**Problem:**
+{{problem_text}}
+
+**Your task:**
+Extract the problem's key objects and relations, then generate analogies to {{num_domains}} other domains with explicit object mappings.
+
+**Return a JSON object with:**
+
+1. "problem_summary": A concise 1-2 sentence summary
+2. "problem_objects": Array of key objects/entities with their functional roles
+3. "problem_relations": Array of core relational structures between objects
+4. "analogies": Array of {{num_domains}} analogies, each with:
+   - "target_domain": The domain name (e.g., "computer_science", "logistics")
+   - "analogy_title": A descriptive title for this analogy
+   - "object_mappings": Array of source-to-target mappings with rationale
+   - "shared_relations": The relational structure preserved across domains
+5. "key_terms": Array of {{min_key_terms}}-{{max_key_terms}} important terms/concepts
+6. "target_domains": Array of the {{num_domains}} domain names (from analogies)
+
+**Map objects by FUNCTION, not surface similarity.** "Delivers payload" is a good mapping basis; "is liquid" is not.
+
+**Example format:**
+```json
+{
+  "problem_summary": "Brief description of the scientific problem",
+  "problem_objects": [
+    {"name": "object_A", "role": "functional role of A"},
+    {"name": "object_B", "role": "functional role of B"}
+  ],
+  "problem_relations": [
+    "key relation between objects"
+  ],
+  "analogies": [
+    {
+      "target_domain": "domain_name",
+      "analogy_title": "Title describing the analogy",
+      "object_mappings": [
+        {"source": "object_A", "target": "analogous_A", "mapping_rationale": "why these map functionally"},
+        {"source": "object_B", "target": "analogous_B", "mapping_rationale": "why these map functionally"}
+      ],
+      "shared_relations": "the relational structure preserved in this domain"
+    }
+  ],
+  "key_terms": ["term1", "term2", "term3"],
+  "target_domains": ["domain_name"]
+}
+```
+
+Return ONLY the JSON object, no other text.
