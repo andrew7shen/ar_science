@@ -1,5 +1,7 @@
 # Analogical Reasoning (AR)
 
+<p align="center"><img src="assets/analogy.png" alt="Analogical Reasoning" width="500"></p>
+
 Code release for the paper **"Unlocking LLM Creativity in Science through Analogical Reasoning"**.
 
 AR is a novel solution generation approach for finding creative scientific approaches. Given a problem, an LLM runs two steps:
@@ -46,7 +48,7 @@ Add `--save` (optionally followed by a path) to the invocation, or just ask Clau
 /analogical-reasoning --save out.json How can we make machine learning models more sample-efficient?
 ```
 
-If no path is given, output is saved to `ar_output/<YYYYMMDD-HHMMSS>_<slug>.json` in the current working directory.
+If no path is given, output is saved to `ar_output/<YYYYMMDD-HHMMSS>_<problem>.json` in the current working directory.
 
 ### Option 2 — With any LLM (via `run_ar.py`)
 
@@ -71,7 +73,7 @@ python prompts/run_ar.py "How can we make machine learning models more sample-ef
 Add the `--save` flag after the problem text. The saved file contains the full envelope: the original problem, the extraction step (analogies, mappings, rationales, shared relations), and the search step (solutions, key concepts, relevance, citations).
 
 ```bash
-# default path: ar_output/<YYYYMMDD-HHMMSS>_<slug>.json
+# default path: ar_output/<YYYYMMDD-HHMMSS>_<problem>.json
 python prompts/run_ar.py "How can we make machine learning models more sample-efficient?" --save
 
 # custom path

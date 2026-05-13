@@ -189,7 +189,7 @@ This is a strict superset of what is rendered in chat — every analogy, mapping
 **Path resolution:**
 
 - If the user provided a path with `--save <path>` or named one when asking to save, use it.
-- Otherwise, default to `ar_output/<YYYYMMDD-HHMMSS>_<slug>.json` in the current working directory, where `<slug>` is the first 5 words of the problem, lowercased, with non-alphanumeric runs replaced by `-`. Create `ar_output/` if it doesn't exist.
+- Otherwise, default to `ar_output/<YYYYMMDD-HHMMSS>_<problem>.json` in the current working directory, where `<problem>` is the first 5 words of the problem, lowercased, with non-alphanumeric runs replaced by `-`. Create `ar_output/` if it doesn't exist.
 
 After writing, tell the user the absolute path on a single line, then continue with the normal prose rendering described in "Output" above.
 

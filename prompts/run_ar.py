@@ -220,7 +220,7 @@ if __name__ == "__main__":
         metavar="PATH",
         help=(
             "Save the full run (problem + extraction + solutions) as JSON. "
-            "If PATH is omitted, defaults to ar_output/<YYYYMMDD-HHMMSS>_<slug>.json. "
+            "If PATH is omitted, defaults to ar_output/<YYYYMMDD-HHMMSS>_<problem>.json. "
             "Place this flag AFTER the problem text to avoid argument ambiguity."
         ),
     )
